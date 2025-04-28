@@ -94,6 +94,7 @@ The JailBreak Show is a full-featured Minecraft minigame plugin, simulating a pr
 ## 📣 Credits
 
 Project Lead: **Shon Mizrahi** 🚀
+
 Lead Developer: **Dor Yahav** 🔥
 
 ---
