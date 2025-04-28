@@ -1,0 +1,8 @@
+name: TheJailBreakShow
+version: 1.0
+main: com.thejailbreakshow.TheJailBreakShow
+api-version: 1.21
+commands:
+  jb:
+    description: JailBreak main command
+    usage: /jb debug
