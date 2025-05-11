@@ -2,6 +2,9 @@ package com.thejailbreakshow;
 
 import com.thejailbreakshow.cells.CellButtonSaveManager;
 import com.thejailbreakshow.regions.RegionSaveManager;
+import com.thejailbreakshow.regions.WeaponRoomManager;
+import com.thejailbreakshow.rules.RulesManager;
+import com.thejailbreakshow.weapons.WeaponManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TheJailBreakShow extends JavaPlugin {
@@ -13,10 +16,20 @@ public final class TheJailBreakShow extends JavaPlugin {
         instance = this;
         getLogger().info("The JailBreak Show plugin enabled.");
 
+        // Initialize managers
         ManagerLoader.init(this);
         RegionSaveManager.init();
         RegionSaveManager.loadAllRegions();
         CellButtonSaveManager.init();
+        
+        // Initialize new components
+        RulesManager.init();
+        WeaponRoomManager.init();
+        WeaponManager.init();
+        
+        // Register event listeners
+        getServer().getPluginManager().registerEvents(new WeaponRoomManager(), this);
+        getServer().getPluginManager().registerEvents(new WeaponManager(), this);
     }
 
     @Override
